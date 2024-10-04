@@ -103,6 +103,20 @@ header {
    }
 }
 
+/* Mobil ekranlar için (768px ve altı) */
+@media (max-width: 768px) {
+   .text-wrapper {
+       display: block; /* Mobilde gizli olmamasını sağla */
+       top: 50%; /* Daha görünür bir konuma ayarla */
+       transform: translateY(-50%); /* Dikey olarak ortala */
+   }
+
+   .moving-text {
+       font-size: 18px; /* Yazı boyutunu küçült (gerekirse) */
+   }
+}
+
+/* Diğer CSS Kodlarınızı Korumak İçin Olduğu Gibi Bıraktım */
 
 
 
