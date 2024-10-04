@@ -29,37 +29,84 @@ body { background: #0f0f0f; }
 /* ------------------------------------------------------------------ */
 
 header {
-    position: relative;
-    height: 600px; /* Toplam yükseklik margin ile birlikte 700px olacak */
-    min-height: 400px; /* Toplam yükseklik margin ile birlikte en az 500px olacak */
-    width: calc(100% - 100px); /* Sağdan ve soldan toplam 100px boşluk bırak */
-    margin: 50px; /* Üst, alt, sağ ve sol 50px boşluk bırak */
-    background: #161415 url(../images/header-background.jpg) no-repeat top center;
-    background-position: center 50px; 
-    background-size: cover !important;
-    -webkit-background-size: cover !important;
-    text-align: center;
-    overflow: hidden;
+   position: relative;
+   height: 700px; /* Toplam yükseklik margin ile birlikte 700px olacak */
+   min-height: 500px; /* Toplam yükseklik margin ile birlikte en az 500px olacak */
+   /*width: calc(100% - 100px); /* Sağdan ve soldan toplam 100px boşluk bırak */
+   margin: 0px; /* Üst, alt, sağ ve sol 50px boşluk bırak */
+   background: #161415 url(../images/header-background.jpg) no-repeat top center;
+  /* background-position: center 50px;*/
+   background-size: cover !important;
+   -webkit-background-size: cover !important;
+   text-align: center;
+   overflow: hidden;
 }
 
+/* Çubuk tanımı */
+/* Çubuk tanımı */
+/* Çubuk tanımı */
+/* Çubuk tanımı */
+/* Çubuk tanımı */
+.text-wrapper {
+   position: absolute; /* Yerleşimi daha hassas ayarlamak için absolute kullanıldı */
+   height: 50px; /* Çubuğun yüksekliği */
+   width: 44%; /* Çubuğun genişliği (tüm header boyunca) */
+   left: 28%; /* Soldan konum ayarlaması */
+   top: 800px; /* Çubuğun header içinde yüksekliğini ayarlayın */
+   overflow: hidden; /* Taşan kısımları gizle */
+   /*border: 2px solid #ffffff; /* Çubuğun çevresine bir sınır koy */
+   background: rgba(0, 0, 0, 0); /* Hafif bir arka plan */
+   z-index: 2; /* Diğer elemanların üstünde görünmesini sağla */
+}
+
+/* Hareketli yazı tanımı */
 .moving-text {
-    position: absolute; /* header içinde tam konumlandırmak için */
-    top: 820px; /* Çubuğun bulunduğu yükseklik - Çubuğun olduğu konuma göre ayarlayın */
-    left: 100%; /* Başlangıç pozisyonunu sağdan başlat */
-    font-size: 24px;
-    color: #ffffff; /* Yazı rengini ayarlayın */
-    white-space: nowrap; /* Yazının tek satırda kalmasını sağlar */
-    animation: moveText 10s linear infinite; /* Hareketli animasyon tanımı */
+   position: absolute; /* Çubuk içinde tam konumlandırmak için */
+   top: 50%; /* Çubuğun dikey olarak ortasında olacak şekilde */
+   left: 100%; /* Sağ kenardan başlayacak şekilde konumlandır */
+   transform: translateY(-50%); /* Dikey ortalama */
+   font-size: 24px;
+   color: #ffffff; /* Yazı rengini ayarlayın */
+   white-space: nowrap; /* Yazının tek satırda kalmasını sağlar */
+   animation: moveText 15s linear infinite; /* Hareketli animasyon tanımı (15 saniye uzatıldı) */
+   z-index: 3; /* Diğer elemanlardan daha önde görünmesini sağla */
 }
 
-@keyframes moveText {
-    0% {
-        left: 100%; /* Sağ kenardan başla */
-    }
-    100% {
-        left: -100%; /* Sol kenardan çıkana kadar devam et */
-    }
+/* İlk yazı için özel delay */
+.moving-text:nth-child(1) {
+   animation-delay: 0s; /* İlk yazı hemen başlar */
 }
+
+/* İkinci yazı için delay */
+.moving-text:nth-child(2) {
+   animation-delay: 15s; /* İkinci yazı, ilk yazı bittikten sonra başlar */
+}
+
+/* Üçüncü yazı için delay */
+.moving-text:nth-child(3) {
+   animation-delay: 30s; /* Üçüncü yazı, ikinci yazı bittikten sonra başlar */
+}
+
+/* Animasyon tanımı */
+@keyframes moveText {
+   0% {
+       left: 100%; /* Sağ kenardan başla */
+       opacity: 1; /* Tamamen görünür */
+   }
+   50% {
+       left: 0%; /* Çubuğun ortasına kadar ilerle */
+       opacity: 1; /* Görünürlüğü koru */
+   }
+   100% {
+       left: -100%; /* Sol kenardan çık */
+       opacity: 1; /* Sol kenara yaklaşırken kaybol */
+   }
+}
+
+
+
+
+
 
 
 
