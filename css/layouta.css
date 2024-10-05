@@ -27,205 +27,23 @@ body { background: #0f0f0f; }
 /* ------------------------------------------------------------------ */
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
-/* Üst Panel Ayarları */
-
 header {
    position: relative;
-   height: 800px;
-   min-height: 500px;
-   width: 100%;
+   height: 800%; /* Toplam yükseklik margin ile birlikte 700px olacak */
+   min-height: 700px; /* Toplam yükseklik margin ile birlikte en az 500px olacak */
+   margin: 0px; /* Üst, alt, sağ ve sol 50px boşluk bırak */
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
    background-size: cover !important;
-	-webkit-background-size: cover !important;
+   -webkit-background-size: cover !important;
    text-align: center;
    overflow: hidden;
 }
 
-/*panel sol anime başlangıç*/
-.left-text-section {
-   position: fixed; /* Sayfanın sol tarafında sabit kalır */
-   top: 20%; /* Sayfanın üstünden itibaren hizalanır */
-   left: 12px; /* Sayfanın sol kenarına yaslar */
-   width: 350px; /* Panelin genişliği */
-   height: 175px;
-   padding: 15px; /* İçerik kenarları için boşluk */
-   background: rgba(0, 0, 0, 0.7); /* Yarı saydam arka plan */
-   border: 2px solid rgba(158, 0, 0, 0.3); /* Şeffaf beyaz bir çerçeve */
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Derinlik hissi için gölge */
-   z-index: 10; /* Diğer öğelerin üzerinde görünmesi için */
-   overflow: hidden; /* Panel dışına taşan içerikleri gizler */
-}
-
-.slide-item {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   opacity: 0; /* Başlangıçta görünmez */
-   transition: opacity 1s ease-in-out; /* Görünürlük geçişi için yumuşak animasyon */
-}
-
-.slide-item img.profile-pic {
-   width: 175px; /* Resmin genişliği */
-   height: 175px; /* Resmin yüksekliği */
-  /* border-radius: 50%; /* Resmi yuvarlak yapar */
-   margin-right: 10px; /* Resim ile yazı arasındaki boşluk */
-   border: 2px solid #820000; /* Beyaz çerçeve */
-}
-
-.text-container {
-   flex-grow: 1; /* Metnin kalan alanı kaplamasını sağlar */
-   color: #ffffff; /* Yazı rengi */
-   font-size: 12px; /* Yazı boyutu */
-   line-height: 0.1; /* Satır yüksekliği */
-}
-
-@keyframes slideShow {
-   0%, 20% {
-       opacity: 1; /* Slayt görünür */
-   }
-   25%, 100% {
-       opacity: 0; /* Slayt görünmez */
-   }
-}
-
-/* Slayt geçişlerini sırayla kontrol et */
-.slide-item:nth-child(1) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 0s; /* İlk slayt hemen başlar */
-}
-
-.slide-item:nth-child(2) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 5s; /* İkinci slayt 5 saniye sonra başlar */
-}
-
-.slide-item:nth-child(3) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 10s; /* Üçüncü slayt 10 saniye sonra başlar */
-}
-/*panel sol anime bitiş*/
-
-/*panel sağ başlangıç*/
-/* Sağ taraftaki panel */
-.right-text-section {
-   position: fixed; /* Sayfanın sağ tarafında sabit kalır */
-   top: 20%; /* Sayfanın üstünden itibaren hizalanır */
-   right: 0; /* Sayfanın sağ kenarına yaslar */
-   width: 350px; /* Panelin genişliği */
-   height: 175px;
-   padding: 15px; /* İçerik kenarları için boşluk */
-   background: rgba(0, 0, 0, 0.7); /* Yarı saydam arka plan */
-   border: 2px solid rgba(158, 0, 0, 0.3); /* Şeffaf beyaz bir çerçeve */
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Derinlik hissi için gölge */
-   z-index: 10; /* Diğer öğelerin üzerinde görünmesi için */
-   overflow: hidden; /* Panel dışına taşan içerikleri gizler */
-}
-
-.right-slide-item {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   opacity: 0; /* Başlangıçta görünmez */
-   transition: opacity 1s ease-in-out; /* Görünürlük geçişi için yumuşak animasyon */
-}
-
-.right-slide-item img.profile-pic {
-   width: 175px; /* Resmin genişliği */
-   height: 175px; /* Resmin yüksekliği */
-   margin-right: 10px; /* Resim ile yazı arasındaki boşluk */
-   border: 2px solid #820000; /* Beyaz çerçeve */
-}
-
-.right-text-container {
-   flex-grow: 1; /* Metnin kalan alanı kaplamasını sağlar */
-   color: #ffffff; /* Yazı rengi */
-   font-size: 16px; /* Yazı boyutu */
-   line-height: 1.5; /* Satır yüksekliği */
-}
-
-/* Sağ paneldeki slayt geçişlerini sırayla kontrol et */
-.right-slide-item:nth-child(1) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 0s; /* İlk slayt hemen başlar */
-}
-
-.right-slide-item:nth-child(2) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 5s; /* İkinci slayt 5 saniye sonra başlar */
-}
-
-.right-slide-item:nth-child(3) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 10s; /* Üçüncü slayt 10 saniye sonra başlar */
-}
-/*panel sağ bitiş anime*/
-/* vertically center banner section */
-header:before {
-   content: '';
-   display: inline-block;
-   vertical-align: middle;
-   height: 100%;
-}
-header .banner {
-   display: inline-block;
-   vertical-align: middle;
-   margin: 0 auto;
-   width: 85%;
-   padding-bottom: 30px;s
-   text-align: center;
-}
-
-header .banner-text { width: 100%; }
-header .banner-text h1 {
-   font: 90px/1.1em 'opensans-bold', sans-serif;
-   color: #fff;
-   letter-spacing: -2px;
-   margin: 0 auto 18px auto;
-   text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
-}
-header .banner-text h3 {
-   font: 18px/1.9em 'librebaskerville-regular', serif;
-   color: #A8A8A8;
-   margin: 0 auto;
-   width: 70%;
-   text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
-}
-header .banner-text h3 span,
-header .banner-text h3 a {
-   color: #fff;
-}
-header .banner-text hr {
-   width: 60%;
-   margin: 18px auto 24px auto;
-   border-color: #2F2D2E;
-   border-color: rgba(150, 150, 150, .1);
-}
-
-/* header social links */
-header .social {
-   margin: 24px 0;
-   padding: 0;
-   font-size: 30px;
-   text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-}
-header .social li {
-   display: inline-block;
-   margin: 0 15px;
-   padding: 0;
-}
-header .social li a { color: #fff; }
-header .social li a:hover { color: #11ABB0; }
-
-/* scrolldown link */
-
+/* Çubuk tanımı */
+/* Çubuk tanımı */
+/* Çubuk tanımı */
+/* Çubuk tanımı */
+/* Çubuk tanımı */
 .text-wrapper {
    position: absolute; /* Yerleşimi daha hassas ayarlamak için absolute kullanıldı */
    height: 50px; /* Çubuğun yüksekliği */
@@ -244,10 +62,10 @@ header .social li a:hover { color: #11ABB0; }
    top: 50%; /* Çubuğun dikey olarak ortasında olacak şekilde */
    left: 100%; /* Sağ kenardan başlayacak şekilde konumlandır */
    transform: translateY(-50%); /* Dikey ortalama */
-   font-size: 20px;
-   color: #eed200; /* Koyu kırmızı (kan rengi) */
+   font-size: 24px;
+   color: #db0505; /* Koyu kırmızı (kan rengi) */
    white-space: nowrap; /* Yazının tek satırda kalmasını sağlar */
-   animation: moveText 15s   linear infinite; /* Hareketli animasyon tanımı */
+   animation: moveText 15s linear infinite; /* Hareketli animasyon tanımı */
    z-index: 3; /* Diğer elemanlardan daha önde görünmesini sağla */
    text-shadow: 2px 2px 5px #700000, 4px 4px 10px #8b0000; /* Kan damlası efekti için gölge ekleme */
    font-family: 'Creepster', cursive; /* Korku temalı bir yazı tipi */
@@ -268,10 +86,18 @@ header .social li a:hover { color: #11ABB0; }
 
 /* İlk yazı için özel delay */
 .moving-text:nth-child(1) {
-   animation-delay: 5s; /* İlk yazı hemen başlar */
+   animation-delay: 0s; /* İlk yazı hemen başlar */
 }
 
+/* İkinci yazı için delay */
+.moving-text:nth-child(2) {
+   animation-delay: 15s; /* İkinci yazı, ilk yazı bittikten sonra başlar */
+}
 
+/* Üçüncü yazı için delay */
+.moving-text:nth-child(3) {
+   animation-delay: 30s; /* Üçüncü yazı, ikinci yazı bittikten sonra başlar */
+}
 
 /* Animasyon tanımı */
 @keyframes moveText {
@@ -299,6 +125,189 @@ header .social li a:hover { color: #11ABB0; }
    }
 }
 
+/* Diğer CSS Kodlarınızı Korumak İçin Olduğu Gibi Bıraktım */
+
+/* Sol tarafta yer alan metin bölümü */
+/* Sol tarafta yer alan metin bölümü */
+/* Sol tarafta yer alan metin bölümü */
+/* Sol tarafta yer alan metin bölümü */
+/* Sol tarafta yer alan metin bölümü */
+/* Sol tarafta yer alan metin bölümü */
+.left-text-section {
+   position: absolute;
+   top: 15%; /* Header içinde konum ayarı */
+   left: 0%; /* Sol kenardan mesafe */
+   width: 26%; /* Geniş ve dikdörtgensel alan */
+   height: 300px; /* Daha büyük yükseklik */
+   color: #ffffff; /* Yazı rengi */
+   font-size: 18px; /* Yazı boyutu */
+   font-family: Arial, sans-serif;
+   z-index: 3; /* Diğer elemanların üstünde görünmesini sağla */
+   overflow: hidden;
+   padding: 20px; /* İçerik boşluğu */
+   background: rgba(0, 0, 0, 0.7); /* Hafif yarı saydam bir arka plan */
+   border: 3px solid rgba(255, 255, 255, 0.5); /* Şeffaf beyaz çerçeve */
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Derinlik hissi için gölge */
+   display: flex;
+   flex-direction: column; /* Slaytların üst üste dizilmesi */
+   animation: fadeInOutSection 18s linear infinite; /* Çerçevenin kaybolma ve tekrar görünme animasyonu */
+}
+
+
+/* Her slayt elemanı */
+/* Slayt öğesini geniş yaparak, sadece bu panelin görünmesini sağla */
+.slide-item {
+   position: fixed; /* Sayfanın tamamında sabit kalacak şekilde hizala */
+   top: 0; /* Sayfanın en üstünden başlayarak hizala */
+   left: 0; /* Sayfanın en soluna hizala */
+   width: 300px; /* Panelin genişliğini ayarla (gerektiğinde artırabilirsiniz) */
+   height: 100vh; /* Panelin yüksekliğini tüm ekran boyunca yap */
+   padding: 20px; /* İçerik için boşluk */
+   background-color: rgba(0, 0, 0, 0.8); /* Hafif şeffaf bir arka plan */
+   opacity: 1; /* Görünür */
+   transition: opacity 2s ease-in-out; /* Opacity geçişi için yumuşak animasyon */
+   display: flex;
+   flex-direction: column; /* İçerikleri dikey olarak hizala */
+   align-items: flex-start; /* İçeriği sola hizala */
+   justify-content: flex-start; /* İçeriği yukarıdan başlat */
+   z-index: 100; /* Diğer elemanların üstünde görünmesini sağla */
+   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Sol tarafa gölge ekleyerek paneli belirginleştir */
+}
+
+
+
+
+/* Yuvarlak resim */
+.profile-image {
+   width: 100px; /* Resmin genişliğini artır */
+   height: 100px; /* Resmin yüksekliğini artır */
+   border-radius: 50%; /* Resmi yuvarlak yap */
+   margin-right: 20px; /* Resim ve metin arasındaki boşluk */
+   border: 3px solid #ffffff; /* Beyaz çerçeve */
+   flex-shrink: 0; /* Resmin boyutunun daralmasını önle */
+}
+
+/* Yazıların bulunduğu kapsayıcı */
+.text-container {
+   flex-grow: 1; /* Metnin kalan alanı kaplamasını sağlar */
+   font-size: 18px; /* Yazı boyutunu artır */
+   color: #ffffff; /* Yazı rengi beyaz */
+}
+
+/* Slaytların sırayla görünmesi */
+.slide-item:nth-child(1) {
+   animation-delay: 0s; /* İlk slayt hemen başlar */
+}
+.slide-item:nth-child(2) {
+   animation-delay: 6s; /* İkinci slayt başlar */
+}
+.slide-item:nth-child(3) {
+   animation-delay: 12s; /* Üçüncü slayt başlar */
+}
+
+/* Animasyon tanımı */
+@keyframes slideText {
+   0%, 20% {
+       opacity: 1; /* Görünür */
+   }
+   25%, 100% {
+       opacity: 0; /* Gizli */
+   }
+}
+
+
+
+
+
+
+
+
+
+
+/* vertically center banner section */
+header:before {
+   content: '';
+   display: inline-block;
+   vertical-align: middle;
+   height: 100%;
+}
+
+header .banner {
+   display: inline-block;
+   vertical-align: middle;
+   margin: 0 auto;
+   width: 85%;
+   padding-bottom: 30px;
+   text-align: center;
+}
+
+header .banner-text {
+   width: 100%;
+}
+
+header .banner-text h1 {
+   font: 90px/1.1em 'Open Sans', sans-serif; /* Türkçe karakter desteği olan font */
+   color: #710505; /* Koyu kırmızı */
+   letter-spacing: -2px;
+   margin: 0 auto 18px auto;
+   text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+}
+
+header .banner-text h3 {
+   font: 24px/1.5em 'Open Sans', sans-serif; /* Aynı font ile tutarlı görünüm */
+   color: #ff0000; /* Kırmızı */
+   margin: 0 auto;
+   width: 70%;
+   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+header .banner-text h3 span,
+header .banner-text h3 a {
+   color: #ff0000; /* Kırmızı */
+}
+
+header .banner-text hr {
+   width: 60%;
+   margin: 18px auto 24px auto;
+   color: #ff0000; /* Kırmızı */
+   border-color: rgba(150, 150, 150, 0.1);
+}
+/* header social links */
+header .social {
+   margin: 24px 0;
+   padding: 0;
+   font-size: 30px;
+   text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
+}
+header .social li {
+   display: inline-block;
+   margin: 0 15px;
+   padding: 0;
+}
+header .social li a { color: #fff; }
+header .social li a:hover { color: #11ABB0; }
+
+/* scrolldown link */
+header .scrolldown a {
+   position: absolute;
+   bottom: 30px;
+   left: 50%;
+   margin-left: -29px;
+   color: #fff;
+   display: block;
+   height: 42px;
+   width: 42px;
+   font-size: 42px;
+   line-height: 42px;
+   color: #fff;
+   border-radius: 100%;
+
+   -webkit-transition: all .3s ease-in-out;
+   -moz-transition: all .3s ease-in-out;
+   -o-transition: all .3s ease-in-out;
+   transition: all .3s ease-in-out;
+}
+header .scrolldown a:hover { color: #11ABB0; }
 
 /* primary navigation
 --------------------------------------------------------------------- */
