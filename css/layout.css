@@ -21,8 +21,47 @@
 /* ------------------------------------------------------------------ */
 /* a. General Styles
 /* ------------------------------------------------------------------ */
+body {
+   font-family: 'Open Sans', sans-serif; /* Türkçe karakter desteği olan bir font kullanın */
+    background: #2d2c2c; /* Arka plan rengi */
+}
 
-body { background: #0f0f0f; }
+.banner-text {
+   text-align: center; /* Ortada hizalama */
+   padding: 1px; /* İç boşluk */
+ /*  background: rgba(106, 104, 104, 0.7); /* Daha koyu ve saydam arka plan */
+   border-radius: 10px; /* Yuvarlatılmış köşeler */
+ /*  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+   width: 25%; /* Banner genişliği ayarlaması */
+   max-width: 800px; /* Maksimum genişlik */
+   margin: 0 auto; /* Ortalamak için otomatik yan boşluk */
+}
+
+.banner-text h1 {
+   font-size: 48px; /* Başlık boyutu */
+   color: #710505; /* Koyu kırmızı */
+   margin-bottom: 5px; /* Alt boşluk */
+}
+
+.banner-text h3 {
+   font-size: 24px; /* Alt başlık boyutu */
+   line-height: 0.1; /* Satır yüksekliği */
+   color: #333; /* Koyu gri yazı rengi */
+}
+
+.line {
+   display: block; /* Her bir satırı ayrı bir blokta tutar */
+   margin: 1px 0; /* Üst ve alt boşluk */
+}
+
+.highlight {
+   color: #db0505; /* Kırmızı renk */
+   font-weight: bold; /* Kalın yazı */
+   font-size: 20px; /* Daha büyük yazı boyutu */
+   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Gölge efekti */
+}
+
+
 
 /* ------------------------------------------------------------------ */
 /* b. Header Styles
@@ -245,7 +284,7 @@ header .social li a:hover { color: #11ABB0; }
    left: 100%; /* Sağ kenardan başlayacak şekilde konumlandır */
    transform: translateY(-50%); /* Dikey ortalama */
    font-size: 20px;
-   color: #eed200; /* Koyu kırmızı (kan rengi) */
+   color: #b00000; /* Koyu kırmızı (kan rengi) */
    white-space: nowrap; /* Yazının tek satırda kalmasını sağlar */
    animation: moveText 15s   linear infinite; /* Hareketli animasyon tanımı */
    z-index: 3; /* Diğer elemanlardan daha önde görünmesini sağla */
@@ -415,6 +454,32 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 /* d. Resume Section
 /* ------------------------------------------------------------------ */
+.education-image {
+   width: 75px; /* Resmin genişliği */
+   height: auto; /* Orantılı yükseklik */
+   margin: 10px 0; /* Üst ve alt boşluk, yan boşluk yok */
+   display: block; /* Blok olarak göster */
+   position: relative; /* Pozisyonu ayarlamak için */
+   left: 25px; /* Resmi sola kaydır */
+}
+.work-image {
+   width: 75px; /* Resmin genişliği */
+   height: auto; /* Orantılı yükseklik */
+   margin: 10px 0; /* Üst ve alt boşluk, yan boşluk yok */
+   display: block; /* Blok olarak göster */
+   position: relative; /* Pozisyonu ayarlamak için */
+   left: 25px; /* Resmi sola kaydır */
+}
+
+.skills-image {
+   width: 75px; /* Resmin genişliği */
+   height: auto; /* Orantılı yükseklik */
+   margin: 10px 0; /* Üst ve alt boşluk, yan boşluk yok */
+   display: block; /* Blok olarak göster */
+   position: relative; /* Pozisyonu ayarlamak için */
+   left: 25px; /* Resmi sola kaydır */
+}
+
 
 #resume {
    background: #fff;
@@ -667,8 +732,22 @@ ul#nav li.current a { color: #F06000; }
    margin-top: -15px;
 }
 .portfolio-item .item-wrap img {
-   vertical-align: bottom;
+   width: 300px;        /* Genişliği belirle */
+    height: 200px;       /* Yüksekliği belirle */
+    object-fit: cover;   /* Resmi düzgün bir şekilde kırpmadan boyutlandır */
+    display: block;      /* Altındaki içerik taşmasını engelle */
+    margin: 0 auto;      /* Resmi ortala */
+    border-radius: 10px; /* Köşeleri yuvarla (isteğe bağlı) */
 }
+.popup-modal img {
+   width: 800px;        /* Sabit genişlik */
+   height: 200px;       /* Sabit yükseklik */
+   object-fit: cover;   /* Resmi düzgün bir şekilde sığdırır */
+   display: block;      /* Altındaki içeriklerin taşmasını engeller */
+   margin: 0 auto;      /* Ortalar */
+   border-radius: 10px; /* Köşeleri yuvarla (isteğe bağlı) */
+}
+
 .portfolio-item .portfolio-item-meta { padding: 18px }
 .portfolio-item .portfolio-item-meta h5 {
    font: 14px/21px 'opensans-bold', sans-serif;
@@ -694,10 +773,17 @@ ul#nav li.current a { color: #F06000; }
 
 /* popup modal */
 .popup-modal {
-	max-width: 550px;
-	background: #fff;
-	position: relative;
-	margin: 0 auto;
+   max-width: 600px;     /* Maksimum genişliği 600px olarak belirledim */
+   width: 80%;           /* Tarayıcı genişliğinin %80'i kadar genişlik */
+   max-height: 700px;    /* Maksimum yüksekliği 400px olarak ayarladım */
+   height: auto;         /* Yükseklik içeriğe göre ayarlanacak */
+   background: #fff;
+   position: relative;
+   margin: 0 auto;
+   overflow-y: auto;     /* İçerik taşarsa dikey kaydırma sağlar */
+   padding: 20px;        /* İçerik çevresindeki boşluk */
+   border-radius: 10px;  /* Köşeleri yuvarlat */
+   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);  /* Gölge efekti */
 }
 .popup-modal .description-box { padding: 12px 36px 18px 36px; }
 .popup-modal .description-box h4 {
