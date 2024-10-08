@@ -731,6 +731,21 @@ ul#nav li.current a { color: #F06000; }
    margin-left: -15px;
    margin-top: -15px;
 }
+@keyframes blink {
+   50% {
+     opacity: 0;
+   }
+ }
+ 
+ .blink {
+   animation: blink 0.5s step-start infinite;
+ }
+ 
+ .blink-text {
+   color: blue;
+   font-weight: bold;
+ }
+ 
 .portfolio-item .item-wrap img {
    width: 300px;        /* Genişliği belirle */
     height: 200px;       /* Yüksekliği belirle */
