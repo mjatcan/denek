@@ -329,13 +329,38 @@ header .social li a:hover { color: #11ABB0; }
    }
 }
 
-/* Mobil ekranlar için (768px ve altı) */
 @media (max-width: 768px) {
+   /* Header kısmı için boyutları küçültme */
    header .banner-text h1 {
-       font-size: 60px; /* Daha küçük yazı boyutu mobilde */
+       font-size: 40px; /* Daha küçük başlık boyutu */
    }
    header .banner-text h3 {
-       font-size: 20px; /* Daha küçük yazı boyutu mobilde */
+       font-size: 16px; /* Daha küçük alt başlık boyutu */
+   }
+   
+   /* Banner metin genişliğini ayarlama */
+   header .banner-text {
+       width: 90%; /* Banner genişliğini ekrana göre ayarlama */
+       margin: 0 auto; /* Ortalamayı koruma */
+   }
+
+   /* Flexslider içerik yerleşimi */
+   .flex-container {
+      width: 100%; /* Genişliği tam ekran yapma */
+      padding: 0 15px; /* Kenarlardan biraz boşluk bırakma */
+      top: 40%; /* Slider'ın ekranın üst kısmına kaymasını engelleme */
+      transform: translateY(-40%); /* Ortalamayı ayarlama */
+   }
+
+   /* Sol ve sağ paneli gizleme */
+   .left-text-section,
+   .right-text-section {
+      display: none; /* Mobilde sol ve sağ panelleri gizleme */
+   }
+
+   /* Mobilde slider görüntü kalitesini ayarlama */
+   .slides > li {
+      height: auto; /* Slider yüksekliğini içeriğe göre ayarlama */
    }
 }
 
@@ -893,7 +918,10 @@ ul#nav li.current a { color: #F06000; }
    header .banner-text h3 {
        font-size: 20px; /* Daha küçük yazı boyutu mobilde */
    }
-   
+   header .banner-text {
+      width: 90%; /* Banner genişliğini ekrana göre ayarlama */
+      margin: 0 auto; /* Ortalamayı koruma */
+  }
    /* Sol ve sağ paneli mobilde gizle */
    .left-text-section,
    .right-text-section {
