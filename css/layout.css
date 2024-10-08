@@ -29,11 +29,9 @@ body { background: #0f0f0f; }
 /* ------------------------------------------------------------------ */
 
 /* Header Background for Desktop */
-/* Header Background */
-/* Header Background */
 header {
    position: relative;
-   height: 100vh; /* Yüksekliği tam ekran yapar */
+   height: 800px;
    min-height: 500px;
    width: 100%;
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
@@ -41,7 +39,6 @@ header {
    -webkit-background-size: cover !important;
    text-align: center;
    overflow: hidden;
-   background-color: #161415; /* Arka plan resmi yetmezse bu renk uygulanacak */
 }
 
 /* Vertically center banner section */
@@ -89,33 +86,25 @@ header .banner-text hr {
 /* Mobile adjustments */
 @media (max-width: 768px) {
    header {
-      height: auto; /* Yükseklik içerikle birlikte ayarlanır */
-      min-height: 100vh; /* Mobilde minimum yüksekliği tam ekran yap */
-      background-size: cover !important; /* Resim tam ekranı doldurur */
-      background-position: center top !important;
+      height: auto; /* Header yüksekliği mobilde içeriğe göre ayarlanır */
+      background-size: contain !important; /* Arka plan resmini mobilde sığdırır */
+      background-position: center top !important; /* Arka planı üstten ve ortadan hizalar */
    }
 
    /* Banner Text Adjustments for Mobile */
    header .banner-text h1 {
-      font-size: 48px; /* Başlık boyutunu küçült */
+      font-size: 48px; /* Başlık boyutunu küçültme */
    }
 
    header .banner-text h3 {
-      font-size: 16px; /* Alt başlık boyutunu küçült */
-      width: 90%; /* Yazı genişliğini artır */
+      font-size: 16px; /* Alt başlık boyutunu küçültme */
+      width: 90%; /* Yazı genişliğini artırma */
    }
 
    header .banner-text hr {
-      width: 80%; /* Çizgi genişliğini artır */
-   }
-
-   /* Alt kısımda boşluk kalmasını engelle */
-   header .scrolldown {
-      display: none; /* Mobilde scrolldown simgesini gizle */
+      width: 80%; /* Çizgi genişliğini artırma */
    }
 }
-
-
 
 
 /* header social links */
