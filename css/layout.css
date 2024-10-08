@@ -30,9 +30,10 @@ body { background: #0f0f0f; }
 
 /* Header Background for Desktop */
 /* Header Background */
+/* Header Background */
 header {
    position: relative;
-   height: 100vh; /* Header yüksekliği tam ekran yapıldı */
+   height: 100vh; /* Yüksekliği tam ekran yapar */
    min-height: 500px;
    width: 100%;
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
@@ -40,6 +41,7 @@ header {
    -webkit-background-size: cover !important;
    text-align: center;
    overflow: hidden;
+   background-color: #161415; /* Arka plan resmi yetmezse bu renk uygulanacak */
 }
 
 /* Vertically center banner section */
@@ -87,26 +89,32 @@ header .banner-text hr {
 /* Mobile adjustments */
 @media (max-width: 768px) {
    header {
-      height: 100vh; /* Mobilde de tam ekran yapıldı */
-      background-size: cover !important; /* Arka plan resmini mobilde de tam dolduracak şekilde ayarlandı */
-      background-position: center top !important; /* Arka planı üstten ve ortadan hizalar */
-      min-height: 100vh; /* Min-height mobilde tam ekranı kapsayacak şekilde ayarlandı */
+      height: auto; /* Yükseklik içerikle birlikte ayarlanır */
+      min-height: 100vh; /* Mobilde minimum yüksekliği tam ekran yap */
+      background-size: cover !important; /* Resim tam ekranı doldurur */
+      background-position: center top !important;
    }
 
    /* Banner Text Adjustments for Mobile */
    header .banner-text h1 {
-      font-size: 48px; /* Başlık boyutunu küçültme */
+      font-size: 48px; /* Başlık boyutunu küçült */
    }
 
    header .banner-text h3 {
-      font-size: 16px; /* Alt başlık boyutunu küçültme */
-      width: 90%; /* Yazı genişliğini artırma */
+      font-size: 16px; /* Alt başlık boyutunu küçült */
+      width: 90%; /* Yazı genişliğini artır */
    }
 
    header .banner-text hr {
-      width: 80%; /* Çizgi genişliğini artırma */
+      width: 80%; /* Çizgi genişliğini artır */
+   }
+
+   /* Alt kısımda boşluk kalmasını engelle */
+   header .scrolldown {
+      display: none; /* Mobilde scrolldown simgesini gizle */
    }
 }
+
 
 
 
