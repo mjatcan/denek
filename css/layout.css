@@ -31,14 +31,13 @@ body { background: #0f0f0f; }
 /* Header Background for Desktop */
 header {
    position: relative;
-   height: 800px;
-   min-height: 500px;
+   height: 100vh;
    width: 100%;
-   background: #161415 url(../images/header-background.jpg) no-repeat top center;
-   background-size: cover !important;
-   -webkit-background-size: cover !important;
+   background: #161415 url(../images/header-background.jpg) no-repeat center center;
+   background-size: cover; /* Resmi tam sığdırır ama kırpılabilir */
    text-align: center;
    overflow: hidden;
+   background-color: #161415;
 }
 
 /* Vertically center banner section */
@@ -85,11 +84,12 @@ header .banner-text hr {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-   header {
-      height: auto; /* Header yüksekliği mobilde içeriğe göre ayarlanır */
-      background-size: contain !important; /* Arka plan resmini mobilde sığdırır */
-      background-position: center top !important; /* Arka planı üstten ve ortadan hizalar */
-   }
+   @media (max-width: 768px) {
+      header {
+         height: 100vh;
+         background-size: cover; /* Mobilde de tam ekran yapar */
+         background-position: center;
+      }
 
    /* Banner Text Adjustments for Mobile */
    header .banner-text h1 {
