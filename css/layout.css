@@ -29,34 +29,33 @@ body { background: #0f0f0f; }
 /* ------------------------------------------------------------------ */
 
 /* Header Background for Desktop */
+/* Responsive Image */
+.responsive-image {
+   width: 100%; /* Resmin genişliği ekran genişliğine bağlı */
+   height: auto; /* Yükseklik otomatik olarak ayarlanır */
+   display: block; /* Resmin altındaki boşlukları kaldırır */
+}
+
+/* Header Styling */
 header {
    position: relative;
-   height: 100vh;
-   width: 100%;
-   background: #161415 url(../images/header-background.jpg) no-repeat center center;
-   background-size: cover; /* Resmi tam sığdırır ama kırpılabilir */
+   width: 100%; /* Genişliği ekran genişliğine bağlı */
    text-align: center;
-   overflow: hidden;
-   background-color: #161415;
+   overflow: hidden; /* Taşma olursa gizler */
 }
 
 /* Vertically center banner section */
-header:before {
-   content: '';
-   display: inline-block;
-   vertical-align: middle;
-   height: 100%;
-}
 header .banner {
-   display: inline-block;
-   vertical-align: middle;
-   margin: 0 auto;
-   width: 85%;
-   padding-bottom: 30px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); /* Banner'ı tam ortalar */
+   width: 85%; /* Yazı alanının genişliği */
    text-align: center;
 }
 
 header .banner-text { width: 100%; }
+
 header .banner-text h1 {
    font: 90px/1.1em 'opensans-bold', sans-serif;
    color: #fff;
@@ -64,6 +63,7 @@ header .banner-text h1 {
    margin: 0 auto 18px auto;
    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
 }
+
 header .banner-text h3 {
    font: 18px/1.9em 'librebaskerville-regular', serif;
    color: #A8A8A8;
@@ -71,10 +71,7 @@ header .banner-text h3 {
    width: 70%;
    text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
-header .banner-text h3 span,
-header .banner-text h3 a {
-   color: #fff;
-}
+
 header .banner-text hr {
    width: 60%;
    margin: 18px auto 24px auto;
@@ -84,27 +81,26 @@ header .banner-text hr {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-   @media (max-width: 768px) {
-      header {
-         height: 100vh;
-         background-size: cover; /* Mobilde de tam ekran yapar */
-         background-position: center;
-      }
+   .banner {
+      width: 90%; /* Mobilde banner genişliği artırıldı */
+   }
 
-   /* Banner Text Adjustments for Mobile */
-   header .banner-text h1 {
+   .banner-text h1 {
       font-size: 48px; /* Başlık boyutunu küçültme */
    }
 
-   header .banner-text h3 {
+   .banner-text h3 {
       font-size: 16px; /* Alt başlık boyutunu küçültme */
       width: 90%; /* Yazı genişliğini artırma */
    }
 
-   header .banner-text hr {
+   .banner-text hr {
       width: 80%; /* Çizgi genişliğini artırma */
    }
 }
+
+
+   /* Banner Text Adjustments for Mobile */
 
 
 /* header social links */
