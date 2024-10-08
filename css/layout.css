@@ -21,192 +21,25 @@
 /* ------------------------------------------------------------------ */
 /* a. General Styles
 /* ------------------------------------------------------------------ */
-body {
-   font-family: 'Open Sans', sans-serif; /* Türkçe karakter desteği olan bir font kullanın */
-    background: #2d2c2c; /* Arka plan rengi */
-}
 
-.banner-text {
-   text-align: center; /* Ortada hizalama */
-   padding: 1px; /* İç boşluk */
- /*  background: rgba(106, 104, 104, 0.7); /* Daha koyu ve saydam arka plan */
-   border-radius: 10px; /* Yuvarlatılmış köşeler */
- /*  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Gölge efekti */
-   width: 25%; /* Banner genişliği ayarlaması */
-   max-width: 800px; /* Maksimum genişlik */
-   margin: 0 auto; /* Ortalamak için otomatik yan boşluk */
-}
-
-.banner-text h1 {
-   font-size: 48px; /* Başlık boyutu */
-   color: #710505; /* Koyu kırmızı */
-   margin-bottom: 5px; /* Alt boşluk */
-}
-
-.banner-text h3 {
-   font-size: 24px; /* Alt başlık boyutu */
-   line-height: 0.1; /* Satır yüksekliği */
-   color: #333; /* Koyu gri yazı rengi */
-}
-
-.line {
-   display: block; /* Her bir satırı ayrı bir blokta tutar */
-   margin: 1px 0; /* Üst ve alt boşluk */
-}
-
-.highlight {
-   color: #db0505; /* Kırmızı renk */
-   font-weight: bold; /* Kalın yazı */
-   font-size: 20px; /* Daha büyük yazı boyutu */
-   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Gölge efekti */
-}
-
-
+body { background: #0f0f0f; }
 
 /* ------------------------------------------------------------------ */
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
-/* Üst Panel Ayarları */
 
 header {
    position: relative;
-   min-height: 100vh; /* Header, ekranın tamamını kaplar */
-   height: auto; /* Yükseklik, içeriğe göre ayarlanır */
+   height: 800px;
+   min-height: 500px;
    width: 100%;
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
    background-size: cover !important;
-   -webkit-background-size: cover !important;
+	-webkit-background-size: cover !important;
    text-align: center;
    overflow: hidden;
 }
 
-
-/*panel sol anime başlangıç*/
-.left-text-section {
-   position: fixed; /* Sayfanın sol tarafında sabit kalır */
-   top: 20%; /* Sayfanın üstünden itibaren hizalanır */
-   left: 12px; /* Sayfanın sol kenarına yaslar */
-   width: 350px; /* Panelin genişliği */
-   height: 175px;
-   padding: 15px; /* İçerik kenarları için boşluk */
-   background: rgba(0, 0, 0, 0.7); /* Yarı saydam arka plan */
-   border: 2px solid rgba(158, 0, 0, 0.3); /* Şeffaf beyaz bir çerçeve */
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Derinlik hissi için gölge */
-   z-index: 10; /* Diğer öğelerin üzerinde görünmesi için */
-   overflow: hidden; /* Panel dışına taşan içerikleri gizler */
-}
-
-.slide-item {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   opacity: 0; /* Başlangıçta görünmez */
-   transition: opacity 1s ease-in-out; /* Görünürlük geçişi için yumuşak animasyon */
-}
-
-.slide-item img.profile-pic {
-   width: 175px; /* Resmin genişliği */
-   height: 175px; /* Resmin yüksekliği */
-  /* border-radius: 50%; /* Resmi yuvarlak yapar */
-   margin-right: 10px; /* Resim ile yazı arasındaki boşluk */
-   border: 2px solid #820000; /* Beyaz çerçeve */
-}
-
-.text-container {
-   flex-grow: 1; /* Metnin kalan alanı kaplamasını sağlar */
-   color: #ffffff; /* Yazı rengi */
-   font-size: 12px; /* Yazı boyutu */
-   line-height: 0.1; /* Satır yüksekliği */
-}
-
-@keyframes slideShow {
-   0%, 20% {
-       opacity: 1; /* Slayt görünür */
-   }
-   25%, 100% {
-       opacity: 0; /* Slayt görünmez */
-   }
-}
-
-/* Slayt geçişlerini sırayla kontrol et */
-.slide-item:nth-child(1) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 0s; /* İlk slayt hemen başlar */
-}
-
-.slide-item:nth-child(2) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 5s; /* İkinci slayt 5 saniye sonra başlar */
-}
-
-.slide-item:nth-child(3) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 10s; /* Üçüncü slayt 10 saniye sonra başlar */
-}
-/*panel sol anime bitiş*/
-
-/*panel sağ başlangıç*/
-/* Sağ taraftaki panel */
-.right-text-section {
-   position: fixed; /* Sayfanın sağ tarafında sabit kalır */
-   top: 20%; /* Sayfanın üstünden itibaren hizalanır */
-   right: 0; /* Sayfanın sağ kenarına yaslar */
-   width: 350px; /* Panelin genişliği */
-   height: 175px;
-   padding: 15px; /* İçerik kenarları için boşluk */
-   background: rgba(0, 0, 0, 0.7); /* Yarı saydam arka plan */
-   border: 2px solid rgba(158, 0, 0, 0.3); /* Şeffaf beyaz bir çerçeve */
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Derinlik hissi için gölge */
-   z-index: 10; /* Diğer öğelerin üzerinde görünmesi için */
-   overflow: hidden; /* Panel dışına taşan içerikleri gizler */
-}
-
-.right-slide-item {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   opacity: 0; /* Başlangıçta görünmez */
-   transition: opacity 1s ease-in-out; /* Görünürlük geçişi için yumuşak animasyon */
-}
-
-.right-slide-item img.profile-pic {
-   width: 175px; /* Resmin genişliği */
-   height: 175px; /* Resmin yüksekliği */
-   margin-right: 10px; /* Resim ile yazı arasındaki boşluk */
-   border: 2px solid #820000; /* Beyaz çerçeve */
-}
-
-.right-text-container {
-   flex-grow: 1; /* Metnin kalan alanı kaplamasını sağlar */
-   color: #ffffff; /* Yazı rengi */
-   font-size: 16px; /* Yazı boyutu */
-   line-height: 1.5; /* Satır yüksekliği */
-}
-
-/* Sağ paneldeki slayt geçişlerini sırayla kontrol et */
-.right-slide-item:nth-child(1) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 0s; /* İlk slayt hemen başlar */
-}
-
-.right-slide-item:nth-child(2) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 5s; /* İkinci slayt 5 saniye sonra başlar */
-}
-
-.right-slide-item:nth-child(3) {
-   animation: slideShow 15s linear infinite;
-   animation-delay: 10s; /* Üçüncü slayt 10 saniye sonra başlar */
-}
-/*panel sağ bitiş anime*/
 /* vertically center banner section */
 header:before {
    content: '';
@@ -265,105 +98,26 @@ header .social li a { color: #fff; }
 header .social li a:hover { color: #11ABB0; }
 
 /* scrolldown link */
+header .scrolldown a {
+   position: absolute;
+   bottom: 30px;
+   left: 50%;
+   margin-left: -29px;
+   color: #fff;
+   display: block;
+   height: 42px;
+   width: 42px;
+   font-size: 42px;
+   line-height: 42px;
+   color: #fff;
+   border-radius: 100%;
 
-.text-wrapper {
-   position: absolute; /* Yerleşimi daha hassas ayarlamak için absolute kullanıldı */
-   height: 50px; /* Çubuğun yüksekliği */
-   width: 44%; /* Çubuğun genişliği (tüm header boyunca) */
-   left: 28%; /* Soldan konum ayarlaması */
-   top: 800px; /* Çubuğun header içinde yüksekliğini ayarlayın */
-   overflow: hidden; /* Taşan kısımları gizle */
-   /*border: 2px solid #ffffff; /* Çubuğun çevresine bir sınır koy */
-   background: rgba(0, 0, 0, 0); /* Hafif bir arka plan */
-   z-index: 2; /* Diğer elemanların üstünde görünmesini sağla */
+   -webkit-transition: all .3s ease-in-out;
+   -moz-transition: all .3s ease-in-out;
+   -o-transition: all .3s ease-in-out;
+   transition: all .3s ease-in-out;
 }
-
-/* Hareketli yazı tanımı */
-.moving-text {
-   position: absolute; /* Çubuk içinde tam konumlandırmak için */
-   top: 50%; /* Çubuğun dikey olarak ortasında olacak şekilde */
-   left: 100%; /* Sağ kenardan başlayacak şekilde konumlandır */
-   transform: translateY(-50%); /* Dikey ortalama */
-   font-size: 20px;
-   color: #b00000; /* Koyu kırmızı (kan rengi) */
-   white-space: nowrap; /* Yazının tek satırda kalmasını sağlar */
-   animation: moveText 15s   linear infinite; /* Hareketli animasyon tanımı */
-   z-index: 3; /* Diğer elemanlardan daha önde görünmesini sağla */
-   text-shadow: 2px 2px 5px #700000, 4px 4px 10px #8b0000; /* Kan damlası efekti için gölge ekleme */
-   font-family: 'Creepster', cursive; /* Korku temalı bir yazı tipi */
-}
-
-/* Kan damlası efekti */
-@keyframes drippingBlood {
-   0% {
-       text-shadow: 2px 2px 5px #700000, 4px 4px 10px #8b0000, 0 0 5px #ff0000;
-   }
-   50% {
-       text-shadow: 4px 4px 10px #8b0000, 8px 8px 15px #ff0000;
-   }
-   100% {
-       text-shadow: 2px 2px 5px #700000, 4px 4px 10px #8b0000, 0 0 20px #ff0000;
-   }
-}
-
-/* İlk yazı için özel delay */
-.moving-text:nth-child(1) {
-   animation-delay: 5s; /* İlk yazı hemen başlar */
-}
-
-
-
-/* Animasyon tanımı */
-@keyframes moveText {
-   0% {
-       left: 100%; /* Sağ kenardan başla */
-       opacity: 1; /* Tamamen görünür */
-   }
-   50% {
-       left: 0%; /* Çubuğun ortasına kadar ilerle */
-       opacity: 1; /* Görünürlüğü koru */
-   }
-   100% {
-       left: -100%; /* Sol kenardan çık */
-       opacity: 1; /* Sol kenara yaklaşırken kaybol */
-   }
-}
-
-@media (max-width: 768px) {
-   /* Header kısmı için boyutları küçültme */
-   header .banner-text h1 {
-       font-size: 40px; /* Daha küçük başlık boyutu */
-   }
-   header .banner-text h3 {
-       font-size: 16px; /* Daha küçük alt başlık boyutu */
-   }
-   
-   /* Banner metin genişliğini ayarlama */
-   header .banner-text {
-       width: 90%; /* Banner genişliğini ekrana göre ayarlama */
-       margin: 0 auto; /* Ortalamayı koruma */
-   }
-
-   /* Flexslider içerik yerleşimi */
-   .flex-container {
-      width: 100%; /* Genişliği tam ekran yapma */
-      padding: 0 15px; /* Kenarlardan biraz boşluk bırakma */
-      top: 40%; /* Slider'ın ekranın üst kısmına kaymasını engelleme */
-      transform: translateY(-40%); /* Ortalamayı ayarlama */
-   }
-
-   /* Sol ve sağ paneli gizleme */
-   .left-text-section,
-   .right-text-section {
-      display: none; /* Mobilde sol ve sağ panelleri gizleme */
-   }
-
-   /* Mobilde slider görüntü kalitesini ayarlama */
-   .slides > li {
-      height: auto; /* Slider yüksekliğini içeriğe göre ayarlama */
-   }
-}
-
+header .scrolldown a:hover { color: #11ABB0; }
 
 /* primary navigation
 --------------------------------------------------------------------- */
@@ -480,32 +234,6 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 /* d. Resume Section
 /* ------------------------------------------------------------------ */
-.education-image {
-   width: 75px; /* Resmin genişliği */
-   height: auto; /* Orantılı yükseklik */
-   margin: 10px 0; /* Üst ve alt boşluk, yan boşluk yok */
-   display: block; /* Blok olarak göster */
-   position: relative; /* Pozisyonu ayarlamak için */
-   left: 25px; /* Resmi sola kaydır */
-}
-.work-image {
-   width: 75px; /* Resmin genişliği */
-   height: auto; /* Orantılı yükseklik */
-   margin: 10px 0; /* Üst ve alt boşluk, yan boşluk yok */
-   display: block; /* Blok olarak göster */
-   position: relative; /* Pozisyonu ayarlamak için */
-   left: 25px; /* Resmi sola kaydır */
-}
-
-.skills-image {
-   width: 75px; /* Resmin genişliği */
-   height: auto; /* Orantılı yükseklik */
-   margin: 10px 0; /* Üst ve alt boşluk, yan boşluk yok */
-   display: block; /* Blok olarak göster */
-   position: relative; /* Pozisyonu ayarlamak için */
-   left: 25px; /* Resmi sola kaydır */
-}
-
 
 #resume {
    background: #fff;
@@ -757,65 +485,9 @@ ul#nav li.current a { color: #F06000; }
    margin-left: -15px;
    margin-top: -15px;
 }
-/*yanıp sönen tıklayın kısmı*/
-@keyframes blink {
-   50% {
-     opacity: 0;
-   }
- }
- 
- .blink {
-   animation: blink 0.5s step-start infinite;
- }
- 
- .blink-text {
-   color: blue;
-   font-weight: bold;
- }
- /*yanıp sonen finito*/
-
- /*usko icin */
- .rect-box {
-   display: inline-block;
-   padding: 15px 25px;
-   border: 3px solid red;
-   border-radius: 10px;
-   background-color: #f0f0f0;
-   color: black;
-   font-weight: bold;
-}
-
-.blink {
-   animation: blink 0.5s step-start infinite;
-   font-weight: bold;
-}
-
-@keyframes blink {
-   50% {
-       opacity: 0;
-   }
-}
-
-
-
- /*usko bitiş*/
 .portfolio-item .item-wrap img {
-   width: 300px;        /* Genişliği belirle */
-    height: 200px;       /* Yüksekliği belirle */
-    object-fit: cover;   /* Resmi düzgün bir şekilde kırpmadan boyutlandır */
-    display: block;      /* Altındaki içerik taşmasını engelle */
-    margin: 0 auto;      /* Resmi ortala */
-    border-radius: 10px; /* Köşeleri yuvarla (isteğe bağlı) */
+   vertical-align: bottom;
 }
-.popup-modal img {
-   width: 800px;        /* Sabit genişlik */
-   height: 200px;       /* Sabit yükseklik */
-   object-fit: cover;   /* Resmi düzgün bir şekilde sığdırır */
-   display: block;      /* Altındaki içeriklerin taşmasını engeller */
-   margin: 0 auto;      /* Ortalar */
-   border-radius: 10px; /* Köşeleri yuvarla (isteğe bağlı) */
-}
-
 .portfolio-item .portfolio-item-meta { padding: 18px }
 .portfolio-item .portfolio-item-meta h5 {
    font: 14px/21px 'opensans-bold', sans-serif;
@@ -841,17 +513,10 @@ ul#nav li.current a { color: #F06000; }
 
 /* popup modal */
 .popup-modal {
-   max-width: 600px;     /* Maksimum genişliği 600px olarak belirledim */
-   width: 80%;           /* Tarayıcı genişliğinin %80'i kadar genişlik */
-   max-height: 700px;    /* Maksimum yüksekliği 400px olarak ayarladım */
-   height: auto;         /* Yükseklik içeriğe göre ayarlanacak */
-   background: #fff;
-   position: relative;
-   margin: 0 auto;
-   overflow-y: auto;     /* İçerik taşarsa dikey kaydırma sağlar */
-   padding: 20px;        /* İçerik çevresindeki boşluk */
-   border-radius: 10px;  /* Köşeleri yuvarlat */
-   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);  /* Gölge efekti */
+	max-width: 550px;
+	background: #fff;
+	position: relative;
+	margin: 0 auto;
 }
 .popup-modal .description-box { padding: 12px 36px 18px 36px; }
 .popup-modal .description-box h4 {
@@ -911,65 +576,7 @@ ul#nav li.current a { color: #F06000; }
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content .popup-modal {
    opacity: 0;
 }
-@media (max-width: 768px) {
-   header .banner-text h1 {
-       font-size: 60px; /* Daha küçük yazı boyutu mobilde */
-   }
-   header .banner-text h3 {
-       font-size: 20px; /* Daha küçük yazı boyutu mobilde */
-   }
-   header .banner-text {
-      width: 90%; /* Banner genişliğini ekrana göre ayarlama */
-      margin: 0 auto; /* Ortalamayı koruma */
-  }
-   /* Sol ve sağ paneli mobilde gizle */
-   .left-text-section,
-   .right-text-section {
-      display: none; /* Sol ve sağ panel mobilde gizlenecek */
-   }
 
-   /* Flexbox içeriğini tek sütun yapma */
-   .ten.columns.flex-container {
-      flex-direction: column; /* İçeriği dikey hizalamak için */
-      width: 100%; /* Genişliği tam ekran yap */
-   }
-
-   .slides li {
-      height: auto; /* Slaytların yüksekliğini içeriğe göre ayarla */
-      padding: 10px; /* İç boşluk ver */
-   }
-}
-
-/* Panel genişlikleri ve sağ-sol sabitlenme */
-@media (max-width: 768px) {
-   .left-text-section,
-   .right-text-section {
-      width: 100%; /* Paneli ekran genişliğine uygun hale getir */
-      height: auto; /* Yüksekliği otomatik ayarla */
-      top: 10%; /* Üstten biraz boşluk bırak */
-      padding: 10px;
-      position: relative; /* Sabitlenmiş pozisyonu kaldır */
-   }
-
-   .slide-item img.profile-pic {
-      width: 100px; /* Resmin boyutunu küçült */
-      height: 100px;
-   }
-
-   .text-container {
-      font-size: 14px; /* Yazı boyutunu küçült */
-   }
-}
-
-/* Resimlerin mobilde uyumlu hale getirilmesi */
-@media (max-width: 768px) {
-   .ten.columns.flex-container .slide1,
-   .ten.columns.flex-container .slide2 {
-      background-size: contain; /* Resmi sığdırmak için */
-      background-position: center; /* Resmi ortala */
-      height: auto; /* Yükseklik içeriğe göre ayarlanır */
-   }
-}
 /* ------------------------------------------------------------------ */
 /* f. Call To Action Section
 /* ------------------------------------------------------------------ */
@@ -1001,7 +608,7 @@ ul#nav li.current a { color: #F06000; }
 }
 #call-to-action h2 {
    font: 28px/36px 'opensans-bold', sans-serif;
-   color: #eeebeb;
+   color: #EBEEEE;
    margin-bottom: 6px;
 }
 #call-to-action h2 a {
@@ -1074,139 +681,12 @@ call-to-action .button {
 }
 #testimonials blockquote:before { content: none; }
 #testimonials blockquote p {
-   font-family: 'Open Sans', sans-serif;
+   font-family: 'librebaskerville-italic', serif;
    padding: 0;
    font-size: 24px;
    line-height: 48px;
-   color: #8f0000
+   color: #fff
 }
-/* Slide 1 için arka plan ve stiller */
-.ten.columns.flex-container .slide1 {
-  /* background-image: url('../images/ass.jpg');*/
-    background-size: left; 
-   background-position: center; 
-   background-repeat: no-repeat;
-   height: 15px; /* Yükseklik */
-   padding: 12px;
-}
-
-.ten.columns.flex-container .slide2 {
- /*  background-image: url('../images/wr.JPG');*/
- background-size: left; /* Aynı şekilde ikinci slayt için de */
-   background-position: center;
-   background-repeat: no-repeat;
-   height: 25px;
-   padding: 20px;
-}
-.ten.columns.flex-container .slide3 {
-  /* background-image: url('../images/bp.jpg');*/
-  background-size: left; /* Aynı şekilde ikinci slayt için de */
-   background-position: center;
-   background-repeat: no-repeat;
-   height: 25px;
-   padding: 20px;
-}
-.ten.columns.flex-container .slide4 {
-   /* background-image: url('../images/bp.jpg');*/
-   background-size: left; /* Aynı şekilde ikinci slayt için de */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 25px;
-    padding: 20px;
- }
- .ten.columns.flex-container .slide5 {
-   /* background-image: url('../images/bp.jpg');*/
-   background-size: left; /* Aynı şekilde ikinci slayt için de */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 25px;
-    padding: 20px;
- }
- .ten.columns.flex-container .slide6 {
-   /* background-image: url('../images/bp.jpg');*/
-   background-size: left; /* Aynı şekilde ikinci slayt için de */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 25px;
-    padding: 20px;
- }
- .ten.columns.flex-container .slide7 {
-   /* background-image: url('../images/bp.jpg');*/
-    background-size: left; /* Aynı şekilde ikinci slayt için de */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 25px;
-    padding: 20px;
- }
-.ten.columns.flex-container .slide1,
-.ten.columns.flex-container .slide2,
-.ten.columns.flex-container .slide3,
-.ten.columns.flex-container .slide4,
-.ten.columns.flex-container .slide5,
-.ten.columns.flex-container .slide6,
-.ten.columns.flex-container .slide7 {
-   background-size: contain; /* Resmi tamamen görünür yapar */
-   background-position: left; /* Ortalar */
-   background-repeat: no-repeat; /* Tekrar etmez */
-   background-color: transparent; /* Arka plan rengini saydam yapar */
-   height: 200px; /* Yüksekliği ayarlayın */
-   padding: 20px;
-}
-
-
-
-/* Blockquote için stil */
-.ten.columns.flex-container blockquote {
-   background-color: rgba(0, 0, 0, 0.3); /* Arka plan renginde hafif saydamlık */
-   border-radius: 10px;
-   padding: 15px;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-   color: inherit; /* Slide'daki yazı rengini blockquote'a uygular */
-}
-
-/* Yazıya spotlight efekti vermek için gerekli stiller */
-.ten.columns.flex-container blockquote p {
-   font-size: 15px;
-   line-height: 1.0;
-   color: #000000 !important; /* Yazı rengini belirler */
-   font-weight: bold; /* Yazıyı kalın yapar */
-   padding: 10px; /* İç boşluk */
-   border-radius: 5px; /* Köşeleri yuvarlatma */
-   background-color: rgba(128, 128, 128, 0.3); /* Hafif grimsi arka plan */
-   position: relative; /* Spotlight efekti için pozisyon */
-   z-index: 1;
-   overflow: hidden; /* Taşan içerikleri gizle */
-}
-
-/* Spotlight efektini oluşturacak element */
-.ten.columns.flex-container blockquote p::before {
-   content: '';
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 300px;
-   height: 300px;
-   background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,255,255,0) 60%);
-   transform: translate(-50%, -50%);
-   z-index: -1; /* Yazının arkasında durması için */
-   animation: moveSpotlight 3s infinite ease-in-out; /* Fener animasyonu */
-}
-
-/* Spotlight animasyonu (fener efekti) */
-
-
-
-
-.ten.columns.flex-container blockquote cite {
-   display: block;
-   margin-top: 10px;
-   font-size: 14px;
-   color: inherit;
-}
-
-
-
-
 #testimonials blockquote cite {
    display: block;
    font-size: 12px;
@@ -1232,33 +712,17 @@ call-to-action .button {
 /* Necessary Styles */
 .flexslider {
    position: relative;
-   width: 100%;
-   max-width: 1200px; /* Maksimum genişliği belirler */
-   margin: 0 auto; /* Ortalar */
-   z-index: 2;
-   top: 50%; /* Sayfanın ortasına yerleştirir */
-   transform: translateY(-50%); /* Dikine ortalar */
+   zoom: 1;
+   margin: 0;
+   padding: 0;
 }
-
-
-.flexslider .slides > li {
-   display: block !important; /* Flexslider içeriğinin gizlenmesini engeller */
-   opacity: 1;
-}
-
+.flexslider .slides { zoom: 1; }
+.flexslider .slides > li { position: relative; }
 
 /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides > li { display: none; -webkit-backface-visibility: hidden; }
 /* Suggested container for slide animation setups. Can replace this with your own */
-.flex-container {
-    position: absolute; /* Slider'ın yerini manuel ayarlamak için absolute yapıyoruz */
-    top: 50%; /* Üstten %50 boşluk vererek ortalama işlemi */
-    left: 50%; /* Soldan %50 boşluk */
-    transform: translate(-50%, -50%); /* Ortalamak için bu dönüşümü kullanıyoruz */
-    width: 80%; /* Slider genişliği */
-    max-width: 1000px; /* Maksimum genişlik */
-}
-
+.flex-container { zoom: 1; position: relative; }
 
 /* Clearfix for .slides */
 .slides:before,
@@ -1474,51 +938,26 @@ footer a:hover, footer a:focus { color: #fff; }
 
 /* copyright */
 footer .copyright {
-   margin: 0;
-   padding: 0;
-   text-align: center;  /* Metni ortala */
-   font-size: 16px;     /* Yazı boyutunu artır */
-   font-weight: bold;   /* Kalın yazı */
-   background-color: #222;  /* Koyu arka plan */
-   color: #ffffff;      /* Yazı rengini tam beyaz yap */
-   padding: 20px 0;
-   z-index: 9999;       /* Diğer elementlerin üstünde olmasını sağla */
-   position: relative;
-   opacity: 1;          /* Saydamlığı kaldır */
-}
-
+    margin: 0;
+    padding: 0;
+ }
 footer .copyright li {
-   display: inline-block;
-   margin: 0;
-   padding: 0;
-   line-height: 24px;
-   color: #ffffff;  /* Yazı rengini tam beyaz yap */
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
 }
-
 .ie footer .copyright li {
    display: inline;
 }
-
 footer .copyright li:before {
-   content: "\2022";  /* Liste elemanları arasına nokta ekle */
-   padding-left: 10px;
-   padding-right: 10px;
-   color: #ff5733; /* Noktalar için kırmızı renk */
+    content: "\2022";
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #095153;
 }
-
-footer .copyright li:first-child:before {
-   display: none;  /* İlk elemandan önce nokta gösterme */
-}
-
-footer .copyright li a {
-   color: #ffcc00;  /* Linkler için belirgin sarı renk */
-   text-transform: uppercase; /* Link metnini büyük harfle yap */
-   text-decoration: none;  /* Alt çizgi olmadan göster */
-   font-weight: bold;
-}
-
-footer .copyright li a:hover {
-   color: #ff5733;  /* Link üzerine gelince renk değişimi */
+footer .copyright  li:first-child:before {
+    display: none;
 }
 
 /* social links */
