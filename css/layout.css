@@ -28,6 +28,7 @@ body { background: #0f0f0f; }
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
 
+/* Header Background for Desktop */
 header {
    position: relative;
    height: 800px;
@@ -35,12 +36,12 @@ header {
    width: 100%;
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
    background-size: cover !important;
-	-webkit-background-size: cover !important;
+   -webkit-background-size: cover !important;
    text-align: center;
    overflow: hidden;
 }
 
-/* vertically center banner section */
+/* Vertically center banner section */
 header:before {
    content: '';
    display: inline-block;
@@ -52,7 +53,7 @@ header .banner {
    vertical-align: middle;
    margin: 0 auto;
    width: 85%;
-   padding-bottom: 30px;s
+   padding-bottom: 30px;
    text-align: center;
 }
 
@@ -81,6 +82,30 @@ header .banner-text hr {
    border-color: #2F2D2E;
    border-color: rgba(150, 150, 150, .1);
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+   header {
+      height: auto; /* Header yüksekliği mobilde içeriğe göre ayarlanır */
+      background-size: contain !important; /* Arka plan resmini mobilde sığdırır */
+      background-position: center top !important; /* Arka planı üstten ve ortadan hizalar */
+   }
+
+   /* Banner Text Adjustments for Mobile */
+   header .banner-text h1 {
+      font-size: 48px; /* Başlık boyutunu küçültme */
+   }
+
+   header .banner-text h3 {
+      font-size: 16px; /* Alt başlık boyutunu küçültme */
+      width: 90%; /* Yazı genişliğini artırma */
+   }
+
+   header .banner-text hr {
+      width: 80%; /* Çizgi genişliğini artırma */
+   }
+}
+
 
 /* header social links */
 header .social {
