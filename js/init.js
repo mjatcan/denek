@@ -121,17 +121,23 @@
 /*----------------------------------------------------*/
 /*	Flexslider
 /*----------------------------------------------------*/
-   $('.flexslider').flexslider({
-      namespace: "flex-",
-      controlsContainer: ".flex-container",
-      animation: 'slide',
-      controlNav: true,
-      directionNav: false,
-      smoothHeight: true,
-      slideshowSpeed: 7000,
-      animationSpeed: 600,
-      randomize: false,
-   });
+$('.flexslider').flexslider({
+   namespace: "flex-",
+   controlsContainer: ".flex-container",
+   animation: 'slide',
+   controlNav: true,
+   directionNav: false,
+   smoothHeight: true,
+   slideshowSpeed: 7000,
+   animationSpeed: 600,
+   randomize: false,
+   after: function(slider) {
+      var currentSlide = slider.currentSlide + 1; // Slayt numarasını al
+      $('body').attr('class', ''); // Önceki sınıfları kaldır
+      $('body').addClass('slide' + currentSlide); // Yeni sınıfı ekle
+   }
+});
+
 
 /*----------------------------------------------------*/
 /*	contact form
