@@ -886,7 +886,62 @@ ul#nav li.current a { color: #F06000; }
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content .popup-modal {
    opacity: 0;
 }
+@media (max-width: 768px) {
+   header .banner-text h1 {
+       font-size: 60px; /* Daha küçük yazı boyutu mobilde */
+   }
+   header .banner-text h3 {
+       font-size: 20px; /* Daha küçük yazı boyutu mobilde */
+   }
+   
+   /* Sol ve sağ paneli mobilde gizle */
+   .left-text-section,
+   .right-text-section {
+      display: none; /* Sol ve sağ panel mobilde gizlenecek */
+   }
 
+   /* Flexbox içeriğini tek sütun yapma */
+   .ten.columns.flex-container {
+      flex-direction: column; /* İçeriği dikey hizalamak için */
+      width: 100%; /* Genişliği tam ekran yap */
+   }
+
+   .slides li {
+      height: auto; /* Slaytların yüksekliğini içeriğe göre ayarla */
+      padding: 10px; /* İç boşluk ver */
+   }
+}
+
+/* Panel genişlikleri ve sağ-sol sabitlenme */
+@media (max-width: 768px) {
+   .left-text-section,
+   .right-text-section {
+      width: 100%; /* Paneli ekran genişliğine uygun hale getir */
+      height: auto; /* Yüksekliği otomatik ayarla */
+      top: 10%; /* Üstten biraz boşluk bırak */
+      padding: 10px;
+      position: relative; /* Sabitlenmiş pozisyonu kaldır */
+   }
+
+   .slide-item img.profile-pic {
+      width: 100px; /* Resmin boyutunu küçült */
+      height: 100px;
+   }
+
+   .text-container {
+      font-size: 14px; /* Yazı boyutunu küçült */
+   }
+}
+
+/* Resimlerin mobilde uyumlu hale getirilmesi */
+@media (max-width: 768px) {
+   .ten.columns.flex-container .slide1,
+   .ten.columns.flex-container .slide2 {
+      background-size: contain; /* Resmi sığdırmak için */
+      background-position: center; /* Resmi ortala */
+      height: auto; /* Yükseklik içeriğe göre ayarlanır */
+   }
+}
 /* ------------------------------------------------------------------ */
 /* f. Call To Action Section
 /* ------------------------------------------------------------------ */
